@@ -9,6 +9,7 @@ export const thumbSchema = z.object({
 
 export const landingPageDataSchema = z.object({
   // SEO
+  seoTitle: z.string().default("Landing Page"),
   seoDescription: z.string().default("Privacy é a plataforma de conteúdo exclusivo do Brasil. Crie seu perfil para monetizar fotos e vídeos ou assine para ter acesso a conteúdo oculto!!!"),
   seoKeywords: z.string().default("privacy, onlyfans, privacidade, onlyfans, nudes, rede social paga, ganhar dinheiro, renda extra, privacy nudes, vender privacy, ganhar na privacy, cadastrar privacy, conta privacy, Vale a pena privacy, Como ganhar na privacy, onlyfans privacy, onlyfans brasileiro, privacy nudy, nudes de famosas"),
   
@@ -82,6 +83,7 @@ export type GenerateZipRequest = z.infer<typeof generateZipRequestSchema>;
 // Default data for initialization
 export const defaultLandingPageData: LandingPageData = {
   // SEO
+  seoTitle: "Landing Page",
   seoDescription: "Privacy é a plataforma de conteúdo exclusivo do Brasil. Crie seu perfil para monetizar fotos e vídeos ou assine para ter acesso a conteúdo oculto!!!",
   seoKeywords: "privacy, onlyfans, privacidade, onlyfans, nudes, rede social paga, ganhar dinheiro, renda extra, privacy nudes, vender privacy, ganhar na privacy, cadastrar privacy, conta privacy, Vale a pena privacy, Como ganhar na privacy, onlyfans privacy, onlyfans brasileiro, privacy nudy, nudes de famosas",
   

@@ -154,6 +154,18 @@ export function EditorPanel({
           <CardTitle className="text-[#F4EEE5] text-lg">SEO</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
+          {/* Page Title */}
+          <div className="space-y-2">
+            <Label className="text-[#F4EEE5]">Título da Página</Label>
+            <Input
+              value={data.seoTitle}
+              onChange={(e) => onChange({ ...data, seoTitle: e.target.value })}
+              placeholder="Título exibido na aba do navegador"
+              className="bg-[#1a1817] border-[#3d3a39] text-[#F4EEE5]"
+              data-testid="input-seo-title"
+            />
+          </div>
+
           {/* Meta Description */}
           <div className="space-y-2">
             <Label className="text-[#F4EEE5]">Meta Description</Label>

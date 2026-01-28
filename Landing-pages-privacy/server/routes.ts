@@ -152,6 +152,7 @@ function generateLandingPageHTML(data: any): string {
   }).join("");
 
   // Escape SEO fields for HTML meta tags
+  const seoTitle = escapeHtml(data.seoTitle || "Landing Page");
   const seoDescription = escapeHtml(data.seoDescription || "");
   const seoKeywords = escapeHtml(data.seoKeywords || "");
   
@@ -174,7 +175,7 @@ function generateLandingPageHTML(data: any): string {
   <meta name="language" content="Portuguese" />
   <meta name="description" content="${seoDescription}" />
   <meta name="keywords" content="${seoKeywords}" />
-  <title>Landing Page</title>
+  <title>${seoTitle}</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
