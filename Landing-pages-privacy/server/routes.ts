@@ -987,17 +987,45 @@ function generateLandingPageHTML(data: any): string {
       margin-top: 8px;
     }
 
-    /* Scroll Reveal Animation */
+    /* Scroll Reveal Animation - Suave com delays escalonados */
     .fade-in {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Delays escalonados para elementos em sequência */
+    .fade-in:nth-child(1) { transition-delay: 0s; }
+    .fade-in:nth-child(2) { transition-delay: 0.1s; }
+    .fade-in:nth-child(3) { transition-delay: 0.2s; }
+    .fade-in:nth-child(4) { transition-delay: 0.3s; }
+    .fade-in:nth-child(5) { transition-delay: 0.4s; }
+
+    /* Animação de entrada inicial para o hero */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-content .fade-in {
+      animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .hero-content .fade-in:nth-child(1) { animation-delay: 0.2s; }
+    .hero-content .fade-in:nth-child(2) { animation-delay: 0.4s; }
+    .hero-content .fade-in:nth-child(3) { animation-delay: 0.6s; }
+    .hero-content .fade-in:nth-child(4) { animation-delay: 0.8s; }
 
     /* Mobile Styles - 394px */
     @media (max-width: 768px) {
@@ -1351,17 +1379,31 @@ function generateLandingPageHTML(data: any): string {
       }
     }
 
-    // Scroll Reveal - IntersectionObserver com threshold: 0.1
+    // Scroll Reveal - IntersectionObserver com animação suave e escalonada
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          // Adiciona delay escalonado baseado na posição do elemento
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
         }
       });
-    }, { threshold: 0.1 });
+    }, observerOptions);
 
-    document.querySelectorAll('.fade-in').forEach(el => {
-      observer.observe(el);
+    // Aplica delays escalonados aos elementos fade-in por seção
+    document.querySelectorAll('.fade-in').forEach((el, index) => {
+      // Elementos dentro do hero já têm animação CSS, não precisa do observer
+      if (!el.closest('.hero-content')) {
+        el.dataset.delay = (index % 5) * 100; // Delay de 0 a 400ms em ciclos
+        observer.observe(el);
+      }
     });
   </script>
 </body>
