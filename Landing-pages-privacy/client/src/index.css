@@ -1,0 +1,354 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Privacy Landing Page Generator - Design Tokens */
+/* 4 CORES EXATAS DO FIGMA */
+:root {
+  /* Privacy Brand Colors */
+  --privacy-black: #23201F;
+  --privacy-orange: #F68D3D;
+  --privacy-beige: #F4EEE5;
+  --privacy-white: #FFFFFF;
+  
+  /* Gradients from Figma */
+  --hero-gradient: linear-gradient(to bottom, rgba(246, 141, 61, 0) 7.555%, #F68D3D 111.49%);
+  --thumb-gradient-normal: linear-gradient(to bottom, rgba(35, 32, 31, 0) 9.728%, #23201F 110.89%);
+  --thumb-gradient-hover: linear-gradient(to bottom, rgba(246, 141, 61, 0) 9.728%, #F68D3D 110.89%);
+  --video-gradient-normal: linear-gradient(to bottom, rgba(35, 32, 31, 0) 9.728%, #23201F 110.17%);
+  --video-gradient-hover: linear-gradient(to bottom, rgba(246, 141, 61, 0) 9.728%, #F68D3D 110.17%);
+
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+
+  /* Base colors using Privacy palette */
+  --background: 37 27% 93%; /* #F4EEE5 bege */
+  --foreground: 15 7% 13%; /* #23201F preto */
+  --border: 37 20% 85%;
+  --card: 0 0% 100%; /* #FFFFFF branco */
+  --card-foreground: 15 7% 13%;
+  --card-border: 37 20% 85%;
+  --sidebar: 15 7% 13%; /* #23201F preto */
+  --sidebar-foreground: 37 27% 93%;
+  --sidebar-border: 15 7% 20%;
+  --sidebar-primary: 27 91% 60%; /* #F68D3D laranja */
+  --sidebar-primary-foreground: 15 7% 13%;
+  --sidebar-accent: 27 91% 60%;
+  --sidebar-accent-foreground: 15 7% 13%;
+  --sidebar-ring: 27 91% 60%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 15 7% 13%;
+  --popover-border: 37 20% 85%;
+  --primary: 27 91% 60%; /* #F68D3D laranja */
+  --primary-foreground: 15 7% 13%;
+  --secondary: 37 27% 93%;
+  --secondary-foreground: 15 7% 13%;
+  --muted: 37 20% 88%;
+  --muted-foreground: 15 7% 45%;
+  --accent: 27 91% 60%;
+  --accent-foreground: 15 7% 13%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 37 20% 85%;
+  --ring: 27 91% 60%;
+  --chart-1: 27 91% 60%;
+  --chart-2: 15 7% 13%;
+  --chart-3: 37 27% 93%;
+  --chart-4: 0 0% 100%;
+  --chart-5: 27 91% 50%;
+
+  --font-sans: 'Poppins', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: .5rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.02);
+  --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.02);
+  --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.02), 0px 1px 2px -1px hsl(0 0% 0% / 0.02);
+  --shadow: 0px 2px 0px 0px hsl(0 0% 0% / 0.02), 0px 1px 2px -1px hsl(0 0% 0% / 0.02);
+  --shadow-md: 0px 2px 0px 0px hsl(0 0% 0% / 0.04), 0px 2px 4px -1px hsl(0 0% 0% / 0.04);
+  --shadow-lg: 0px 2px 0px 0px hsl(0 0% 0% / 0.05), 0px 4px 6px -1px hsl(0 0% 0% / 0.05);
+  --shadow-xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.06), 0px 8px 10px -1px hsl(0 0% 0% / 0.06);
+  --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.08);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+.dark {
+  --button-outline: rgba(255,255,255, .10);
+  --badge-outline: rgba(255,255,255, .05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .09);
+
+  --background: 15 7% 13%;
+  --foreground: 37 27% 93%;
+  --border: 15 7% 25%;
+  --card: 15 7% 18%;
+  --card-foreground: 37 27% 93%;
+  --card-border: 15 7% 25%;
+  --sidebar: 15 7% 10%;
+  --sidebar-foreground: 37 27% 93%;
+  --sidebar-border: 15 7% 20%;
+  --sidebar-primary: 27 91% 60%;
+  --sidebar-primary-foreground: 15 7% 13%;
+  --sidebar-accent: 27 91% 60%;
+  --sidebar-accent-foreground: 15 7% 13%;
+  --sidebar-ring: 27 91% 60%;
+  --popover: 15 7% 18%;
+  --popover-foreground: 37 27% 93%;
+  --popover-border: 15 7% 25%;
+  --primary: 27 91% 60%;
+  --primary-foreground: 15 7% 13%;
+  --secondary: 15 7% 20%;
+  --secondary-foreground: 37 27% 93%;
+  --muted: 15 7% 25%;
+  --muted-foreground: 37 20% 65%;
+  --accent: 27 91% 60%;
+  --accent-foreground: 15 7% 13%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 15 7% 30%;
+  --ring: 27 91% 60%;
+  --chart-1: 27 91% 60%;
+  --chart-2: 37 27% 93%;
+  --chart-3: 15 7% 40%;
+  --chart-4: 0 0% 100%;
+  --chart-5: 27 91% 50%;
+
+  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.05);
+  --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.05);
+  --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.05), 0px 1px 2px -1px hsl(0 0% 0% / 0.05);
+  --shadow: 0px 2px 0px 0px hsl(0 0% 0% / 0.05), 0px 1px 2px -1px hsl(0 0% 0% / 0.05);
+  --shadow-md: 0px 2px 0px 0px hsl(0 0% 0% / 0.08), 0px 2px 4px -1px hsl(0 0% 0% / 0.08);
+  --shadow-lg: 0px 2px 0px 0px hsl(0 0% 0% / 0.10), 0px 4px 6px -1px hsl(0 0% 0% / 0.10);
+  --shadow-xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.12), 0px 8px 10px -1px hsl(0 0% 0% / 0.12);
+  --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.15);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Privacy Landing Page Specific Styles */
+.privacy-lowercase {
+  text-transform: lowercase;
+}
+
+.privacy-uppercase {
+  text-transform: uppercase;
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth scroll for carousels */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Scroll reveal animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Thumb card hover effects */
+.thumb-card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.thumb-card:hover {
+  transform: scale(1.02);
+}
+
+.thumb-card .thumb-photo {
+  transition: transform 0.4s ease;
+}
+
+.thumb-card:hover .thumb-photo {
+  transform: scale(1.05);
+}
+
+.thumb-card .thumb-gradient {
+  background: var(--thumb-gradient-normal);
+  transition: background 0.4s ease;
+}
+
+.thumb-card:hover .thumb-gradient {
+  background: var(--thumb-gradient-hover);
+}
+
+.thumb-card .thumb-legend {
+  background: var(--privacy-white);
+  transition: background 0.4s ease;
+}
+
+.thumb-card:hover .thumb-legend {
+  background: var(--privacy-orange);
+}
+
+.thumb-card .thumb-button {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.thumb-card:hover .thumb-button {
+  opacity: 1;
+}
+
+/* Video hover effects */
+.video-container {
+  cursor: pointer;
+}
+
+.video-container .video-thumbnail {
+  transition: transform 0.4s ease;
+}
+
+.video-container:hover .video-thumbnail {
+  transform: scale(1.1);
+}
+
+.video-container .video-gradient {
+  background: var(--video-gradient-normal);
+  transition: background 0.4s ease;
+}
+
+.video-container:hover .video-gradient {
+  background: var(--video-gradient-hover);
+}
+
+.video-container .play-icon {
+  transition: all 0.4s ease;
+}
+
+.video-container:hover .play-icon {
+  transform: scale(1.27);
+}
+
+.video-container .video-text {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.video-container:hover .video-text {
+  opacity: 1;
+}
+
+/* Note: According to Figma spec, hover effects are ONLY on thumb cards and video container */
+/* Buttons do NOT have hover scale effect in the original design */
+
+/* Modal overlay */
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  .no-default-hover-elevate {}
+  .no-default-active-elevate {}
+
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+}

@@ -1,0 +1,33 @@
+alguns pontos..:
+
+HERO: o que é melhor.. já mandar a imagem inteira com o degrade.. e você só vai ajustando no responsivo ... e uma outra para o mobile.. ou prefere.. ter a imagem sem o degrade... e você faz isso no código? lembrando que.. esse degrade é no laranja como vc colocou.. porém ele começa em 100% e vai para 0% de transparência... ta? 
+
+outra coisa... só trabalhamos com 4 cores.. para ter precisão aqui está o frame de cores
+Implement this design from Figma.
+@https://www.figma.com/design/70OoTWJ2YmMT1E0lAghNkF/Landing-creators---Tadalafellas?node-id=6015-60&m=dev
+
+as fotos a mesma pergunta... o que é melhor eu já mandar ela do jeito que está? e o texto?  vai junto? vamos ter o campo pra mudar? acho melhor né? 
+
+lembrando que: tem efeito quando passa o mouse (isso para desktop né, mobile nao tem) quando passa o mouse... tem um efeito zoom somente na foto dela.. e a cor do box e degrade na foto fica de outra fcor... mas podemos fazer um chaarme... conforme o usuário vai descendo na pagina.. os conteúdos vão aparecendo com position simples e fade... 
+[
+vou te mandar o link do frame dos actions normal e hover tanto de foto quanto de vídeo... ok?
+
+OUTRAS DUVIDAS SUAS... 
+1 scrol horizontal sim... pq podemos add mais fotos sabe? tipo.. ali eu diz o layout com 3... mas podemos ter 4...  esse scroll quero que seja suave, leve.. nada muito bruto e "duro" 
+
+2 o modal vai ter sim... vou criar e deixar o link do frame como deve ser... ok? 
+
+3 vai ter um logo sim.. prever no builder para ter esse insert de logo... imagem png ou svg
+
+4 o vídeo vai ser hospedado na pasta.. tanto isso quanto as imagens 
+
+5 os textos vao ser um para cada foto (quantas tiver) e diferente para cada criadora sim... 
+
+Implement these 5 designs from Figma.
+@https://www.figma.com/design/70OoTWJ2YmMT1E0lAghNkF/Landing-creators---Tadalafellas?node-id=6005-612&m=dev
+@https://www.figma.com/design/70OoTWJ2YmMT1E0lAghNkF/Landing-creators---Tadalafellas?node-id=6005-632&m=dev
+@https://www.figma.com/design/70OoTWJ2YmMT1E0lAghNkF/Landing-creators---Tadalafellas?node-id=6015-60&m=dev
+@https://www.figma.com/design/70OoTWJ2YmMT1E0lAghNkF/Landing-creators---Tadalafellas?node-id=6017-69&m=dev
+@https://www.figma.com/design/70OoTWJ2YmMT1E0lAghNkF/Landing-creators---Tadalafellas?node-id=6017-120&m=dev
+
+veja se ta ok...
