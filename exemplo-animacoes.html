@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste de Animações - Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #F4EEE5;
+      color: #23201F;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 700px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #23201F 0%, #3d3a39 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(246, 141, 61, 0) 7.555%, #F68D3D 111.49%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .hero-title {
+      font-size: clamp(48px, 10vw, 108px);
+      font-weight: 600;
+      color: #F4EEE5;
+      letter-spacing: -0.08em;
+      line-height: 0.84;
+      text-transform: lowercase;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(20px, 4vw, 50px);
+      font-weight: 600;
+      color: #F4EEE5;
+      letter-spacing: -0.05em;
+      line-height: 0.84;
+      text-transform: lowercase;
+      margin-top: 16px;
+    }
+
+    .hero-arrow {
+      width: 36px;
+      margin: 32px 0 18px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    .hero-cta {
+      min-width: 188px;
+      height: 62px;
+      background: #23201F;
+      color: #F4EEE5;
+      border-radius: 31px;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.84px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      white-space: nowrap;
+      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .hero-cta:hover {
+      transform: scale(1.05);
+      background: #F4EEE5;
+      color: #23201F;
+    }
+
+    /* Thumbs Section */
+    .thumbs {
+      width: 100%;
+      background: #F4EEE5;
+      padding: 82px 40px 54px;
+    }
+
+    .thumbs-title {
+      text-align: center;
+      font-size: clamp(36px, 6vw, 70px);
+      font-weight: 600;
+      color: #23201F;
+      letter-spacing: -0.05em;
+      line-height: 0.84;
+      text-transform: lowercase;
+      margin-bottom: 76px;
+    }
+
+    .thumbs-title span {
+      color: #F68D3D;
+    }
+
+    .thumbs-inner {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .thumb-card {
+      width: 280px;
+      height: 400px;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      border-radius: 40px;
+      overflow: hidden;
+      background: #ccc;
+      position: relative;
+    }
+
+    .thumb-card:hover {
+      transform: scale(1.02);
+    }
+
+    .thumb-gradient {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 250px;
+      background: linear-gradient(to bottom, rgba(35, 32, 31, 0) 9.728%, #23201F 110.89%);
+      pointer-events: none;
+      transition: background 0.4s ease;
+    }
+
+    .thumb-card:hover .thumb-gradient {
+      background: linear-gradient(to bottom, rgba(246, 141, 61, 0) 9.728%, #F68D3D 110.89%);
+    }
+
+    .thumb-button {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 146px;
+      height: 48px;
+      background: #F4EEE5;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 600;
+      color: #23201F;
+      opacity: 0;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .thumb-card:hover .thumb-button {
+      opacity: 1;
+    }
+
+    .thumb-button:hover {
+      background: #23201F;
+      color: #F4EEE5;
+      transform: translateX(-50%) scale(1.05);
+    }
+
+    .thumbs-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 70px;
+    }
+
+    .thumbs-btn {
+      min-width: 400px;
+      height: 80px;
+      background: #F68D3D;
+      color: #23201F;
+      border-radius: 50px;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 40px;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+    }
+
+    .thumbs-btn:hover {
+      transform: scale(1.05);
+      background: #23201F;
+      color: #F4EEE5;
+    }
+
+    /* Final Section */
+    .final-info {
+      width: 100%;
+      background: #F68D3D;
+      padding: 100px 40px;
+      text-align: center;
+    }
+
+    .final-title-1 {
+      font-size: clamp(32px, 6vw, 70px);
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      line-height: 0.9;
+      text-transform: lowercase;
+      margin-bottom: 40px;
+    }
+
+    .final-title-1 .beige { color: #F4EEE5; }
+    .final-title-1 .black { color: #23201F; }
+
+    .final-btn-1 {
+      min-width: 300px;
+      height: 80px;
+      background: #F4EEE5;
+      color: #23201F;
+      border-radius: 50px;
+      font-size: 28px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 80px;
+      padding: 0 40px;
+      transition: all 0.3s ease;
+    }
+
+    .final-btn-1:hover {
+      transform: scale(1.05);
+      background: #23201F;
+      color: #F4EEE5;
+    }
+
+    .final-btn-2 {
+      min-width: 400px;
+      height: 80px;
+      background: #23201F;
+      color: #F4EEE5;
+      border-radius: 50px;
+      font-size: 28px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      padding: 0 40px;
+      transition: all 0.3s ease;
+    }
+
+    .final-btn-2:hover {
+      transform: scale(1.05);
+      background: #F4EEE5;
+      color: #23201F;
+    }
+
+    /* Scroll Reveal Animation - Suave com delays escalonados */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Animação de entrada inicial para o hero */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-content .fade-in {
+      animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .hero-content .fade-in:nth-child(1) { animation-delay: 0.2s; opacity: 0; }
+    .hero-content .fade-in:nth-child(2) { animation-delay: 0.4s; opacity: 0; }
+    .hero-content .fade-in:nth-child(3) { animation-delay: 0.6s; opacity: 0; }
+    .hero-content .fade-in:nth-child(4) { animation-delay: 0.8s; opacity: 0; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .thumbs-btn, .final-btn-1, .final-btn-2 {
+        min-width: 280px;
+        height: 56px;
+        font-size: 18px;
+      }
+      .hero-cta {
+        font-size: 20px;
+        height: 52px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <h1 class="hero-title fade-in">nome da criadora</h1>
+      <p class="hero-subtitle fade-in">conteúdo exclusivo<br>só pra você</p>
+      <svg class="hero-arrow fade-in" width="36" height="36" viewBox="0 0 24 24" fill="none">
+        <path d="M12 4L12 20M12 20L18 14M12 20L6 14" stroke="#F4EEE5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <a href="#" class="hero-cta fade-in">ver agora</a>
+    </div>
+  </section>
+
+  <!-- Thumbs Section -->
+  <section class="thumbs">
+    <h2 class="thumbs-title fade-in">algumas prévias do que<br>você vai encontrar <span>lá dentro</span></h2>
+    <div class="thumbs-inner">
+      <div class="thumb-card fade-in">
+        <div class="thumb-gradient"></div>
+        <a href="#" class="thumb-button">ver agora</a>
+      </div>
+      <div class="thumb-card fade-in">
+        <div class="thumb-gradient"></div>
+        <a href="#" class="thumb-button">ver agora</a>
+      </div>
+      <div class="thumb-card fade-in">
+        <div class="thumb-gradient"></div>
+        <a href="#" class="thumb-button">ver agora</a>
+      </div>
+    </div>
+    <div class="thumbs-cta">
+      <a href="#" class="thumbs-btn fade-in">
+        assine e veja muito mais
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Final Section -->
+  <section class="final-info">
+    <h2 class="final-title-1 fade-in">
+      <span class="beige">gostou do que viu?</span><br>
+      <span class="black">então assina!</span>
+    </h2>
+    <a href="#" class="final-btn-1 fade-in">
+      quero assinar
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+    <br>
+    <a href="#" class="final-btn-2 fade-in">criar conta grátis</a>
+  </section>
+
+  <script>
+    // Scroll Reveal - IntersectionObserver com animação suave e escalonada
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.dataset.delay || 0;
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, delay);
+        }
+      });
+    }, observerOptions);
+
+    // Aplica delays escalonados aos elementos fade-in
+    document.querySelectorAll('.fade-in').forEach((el, index) => {
+      if (!el.closest('.hero-content')) {
+        el.dataset.delay = (index % 5) * 150;
+        observer.observe(el);
+      }
+    });
+  </script>
+</body>
+</html>
