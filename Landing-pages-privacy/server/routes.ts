@@ -374,13 +374,15 @@ function generateLandingPageHTML(data: any): string {
       justify-content: center;
       padding: 0 20px;
       white-space: nowrap;
-      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(246, 141, 61, 0.3);
     }
 
     .hero-subscribe-btn:hover {
-      transform: scale(1.05);
+      transform: scale(1.08) translateY(-3px);
       background: #23201F;
       color: #F4EEE5;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     }
 
     .hero-content {
@@ -447,13 +449,15 @@ function generateLandingPageHTML(data: any): string {
       justify-content: center;
       padding: 0 24px;
       white-space: nowrap;
-      transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .hero-cta:hover {
-      transform: scale(1.05);
+      transform: scale(1.08) translateY(-4px);
       background: #F4EEE5;
       color: #23201F;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     }
 
     .hero-cta-inner {
@@ -600,7 +604,8 @@ function generateLandingPageHTML(data: any): string {
     .thumb-button:hover {
       background: #23201F;
       color: #F4EEE5;
-      transform: translateX(-50%) scale(1.05);
+      transform: translateX(-50%) scale(1.1) translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     }
 
     .thumb-card:hover .thumb-legend {
@@ -653,13 +658,15 @@ function generateLandingPageHTML(data: any): string {
       gap: 8px;
       padding: 0 40px;
       white-space: nowrap;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(246, 141, 61, 0.3);
     }
 
     .thumbs-btn:hover {
-      transform: scale(1.05);
+      transform: scale(1.08) translateY(-4px);
       background: #23201F;
       color: #F4EEE5;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     }
 
     /* Video Section - 444x555px desktop */
@@ -822,13 +829,15 @@ function generateLandingPageHTML(data: any): string {
       margin-bottom: 100px;
       padding: 0 40px;
       white-space: nowrap;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     }
 
     .final-btn-1:hover {
-      transform: scale(1.05);
+      transform: scale(1.08) translateY(-4px);
       background: #23201F;
       color: #F4EEE5;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     }
 
     .final-title-2 {
@@ -870,13 +879,15 @@ function generateLandingPageHTML(data: any): string {
       margin-bottom: 24px;
       padding: 0 40px;
       white-space: nowrap;
-      transition: all 0.3s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     .final-btn-2:hover {
-      transform: scale(1.05);
+      transform: scale(1.08) translateY(-4px);
       background: #F4EEE5;
       color: #23201F;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     }
 
     .final-login {
