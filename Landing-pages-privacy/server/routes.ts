@@ -264,18 +264,27 @@ function generateLandingPageHTML(data: any): string {
       letter-spacing: -0.54px;
       cursor: pointer;
       border: none;
-      transition: all 0.3s ease;
-    }
-
-    .modal-btn-access:hover {
-      transform: scale(1.05);
-      background: #23201F;
-      color: #F4EEE5;
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
     }
 
     .modal-btn-access {
       background: #F68D3D;
       color: #F4EEE5;
+    }
+
+    .modal-btn-access:hover {
+      transform: scale(1.1);
+      background: #23201F;
+      color: #F4EEE5;
+      box-shadow: 0 0 20px rgba(35, 32, 31, 0.5);
+    }
+
+    .modal-btn-access:active {
+      transform: scale(0.98);
+      transition: all 0.25s;
+      -webkit-transition: all 0.25s;
+      box-shadow: none;
     }
 
     .modal-btn-exit {
@@ -289,9 +298,17 @@ function generateLandingPageHTML(data: any): string {
     }
 
     .modal-btn-exit:hover {
-      transform: scale(1.05);
+      transform: scale(1.1);
       background: #F68D3D;
       color: #F4EEE5;
+      box-shadow: 0 0 20px rgba(246, 141, 61, 0.5);
+    }
+
+    .modal-btn-exit:active {
+      transform: scale(0.98);
+      transition: all 0.25s;
+      -webkit-transition: all 0.25s;
+      box-shadow: none;
     }
 
     .modal-terms {
@@ -374,15 +391,22 @@ function generateLandingPageHTML(data: any): string {
       justify-content: center;
       padding: 0 20px;
       white-space: nowrap;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px rgba(246, 141, 61, 0.3);
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
     }
 
     .hero-subscribe-btn:hover {
-      transform: scale(1.08) translateY(-3px);
+      transform: scale(1.1);
       background: #23201F;
       color: #F4EEE5;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 20px rgba(35, 32, 31, 0.5);
+    }
+
+    .hero-subscribe-btn:active {
+      transform: scale(0.98);
+      transition: all 0.25s;
+      -webkit-transition: all 0.25s;
+      box-shadow: none;
     }
 
     .hero-content {
@@ -449,15 +473,22 @@ function generateLandingPageHTML(data: any): string {
       justify-content: center;
       padding: 0 24px;
       white-space: nowrap;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
     }
 
     .hero-cta:hover {
-      transform: scale(1.08) translateY(-4px);
+      transform: scale(1.1);
       background: #F4EEE5;
       color: #23201F;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 20px rgba(244, 238, 229, 0.5);
+    }
+
+    .hero-cta:active {
+      transform: scale(0.98);
+      transition: all 0.25s;
+      -webkit-transition: all 0.25s;
+      box-shadow: none;
     }
 
     .hero-cta-inner {
@@ -584,7 +615,8 @@ function generateLandingPageHTML(data: any): string {
       color: #23201F;
       letter-spacing: -0.6px;
       opacity: 0;
-      transition: all 0.3s ease;
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
       text-decoration: none;
     }
 
@@ -604,8 +636,15 @@ function generateLandingPageHTML(data: any): string {
     .thumb-button:hover {
       background: #23201F;
       color: #F4EEE5;
-      transform: translateX(-50%) scale(1.1) translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      transform: translateX(-50%) scale(1.1);
+      box-shadow: 0 0 20px rgba(35, 32, 31, 0.5);
+    }
+
+    .thumb-button:active {
+      transform: translateX(-50%) scale(0.98);
+      transition: all 0.25s;
+      -webkit-transition: all 0.25s;
+      box-shadow: none;
     }
 
     .thumb-card:hover .thumb-legend {
@@ -658,15 +697,22 @@ function generateLandingPageHTML(data: any): string {
       gap: 8px;
       padding: 0 40px;
       white-space: nowrap;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px rgba(246, 141, 61, 0.3);
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
     }
 
     .thumbs-btn:hover {
-      transform: scale(1.08) translateY(-4px);
+      transform: scale(1.1);
       background: #23201F;
       color: #F4EEE5;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 20px rgba(35, 32, 31, 0.5);
+    }
+
+    .thumbs-btn:active {
+      transform: scale(0.98);
+      transition: all 0.25s;
+      -webkit-transition: all 0.25s;
+      box-shadow: none;
     }
 
     /* Video Section - 444x555px desktop */
@@ -829,15 +875,22 @@ function generateLandingPageHTML(data: any): string {
       margin-bottom: 100px;
       padding: 0 40px;
       white-space: nowrap;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
     }
 
     .final-btn-1:hover {
-      transform: scale(1.08) translateY(-4px);
+      transform: scale(1.1);
       background: #23201F;
       color: #F4EEE5;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 20px rgba(35, 32, 31, 0.5);
+    }
+
+    .final-btn-1:active {
+      transform: scale(0.98);
+      transition: all 0.25s;
+      -webkit-transition: all 0.25s;
+      box-shadow: none;
     }
 
     .final-title-2 {
@@ -879,15 +932,22 @@ function generateLandingPageHTML(data: any): string {
       margin-bottom: 24px;
       padding: 0 40px;
       white-space: nowrap;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s;
     }
 
     .final-btn-2:hover {
-      transform: scale(1.08) translateY(-4px);
+      transform: scale(1.1);
       background: #F4EEE5;
       color: #23201F;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 20px rgba(244, 238, 229, 0.5);
+    }
+
+    .final-btn-2:active {
+      transform: scale(0.98);
+      transition: all 0.25s;
+      -webkit-transition: all 0.25s;
+      box-shadow: none;
     }
 
     .final-login {
